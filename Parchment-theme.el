@@ -106,6 +106,18 @@
    `(centaur-tabs-modified-marker-selected ((t (:inherit 'centaur-tabs-selected :foreground ,c-blue-1))))
    `(centaur-tabs-modified-marker-uselected ((t (:inherit 'centaur-tabs-unselected :foreground ,c-blue-1))))
 
+   `(term-color-black ((t (:foreground ,c-ansi-black :background ,c-ansi-black))))
+   `(term-color-red ((t (:foreground ,c-ansi-red :background ,c-ansi-red))))
+   `(term-color-green ((t (:foreground ,c-ansi-green :background ,c-ansi-green))))
+   `(term-color-yellow ((t (:foreground ,c-ansi-yellow :background ,c-ansi-yellow))))
+   `(term-color-blue ((t (:foreground ,c-ansi-blue :background ,c-ansi-blue))))
+   `(term-color-magenta ((t (:foreground ,c-ansi-magenta :background ,c-ansi-magenta))))
+   `(term-color-cyan ((t (:foreground ,c-ansi-cyan :background ,c-ansi-cyan))))
+   `(term-color-white ((t (:foreground ,c-ansi-white :background ,c-ansi-white))))
+
+   '(term-default-fg-color ((t (:inherit term-color-white))))
+   '(term-default-bg-color ((t (:inherit term-color-black))))
+
    '(tuareg-font-lock-governing-face ((t (:inherit (font-lock-builtin-face)))))
    '(tuareg-font-lock-multistage-face ((t (:inherit (font-lock-builtin-face)))))
    '(tuareg-font-lock-operator-face ((t (:inherit (font-lock-operator-face)))))
@@ -167,10 +179,9 @@
    `(company-tooltip-selection ((t (:weight bold :background ,c-pop-sel-bg))))
    `(company-tooltip-common ((t (:foreground ,c-pop-common-fg)))))
   (setq-default ansi-color-names-vector
-                (vconcat
-                 (list
-                  c-ansi-black c-ansi-red c-ansi-green c-ansi-yellow
-                  c-ansi-blue c-ansi-magenta c-ansi-cyan c-ansi-white)))
+                [term term-color-black term-color-red term-color-green
+                      term-color-yellow term-color-blue term-color-magenta
+                      term-color-cyan term-color-white])
   t)
 
 (provide-theme 'Parchment)
